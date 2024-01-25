@@ -3,7 +3,7 @@
 require("../polyfill");
 
 import { useState, useEffect } from "react";
-import { fetchData } from "../page";
+// import { fetchData } from "../page";
 import styles from "./home.module.scss";
 
 import BotIcon from "../icons/WWOLF.svg";
@@ -96,10 +96,10 @@ function useHtmlLang() {
     if (lang !== htmlLang) {
       document.documentElement.lang = lang;
     }
-    const result = fetchData();
-    if (result) {
-      setUserData(result);
-    }
+    // const result = fetchData();
+    // if (result) {
+    //   setUserData(result);
+    // }
   }, []);
 }
 
