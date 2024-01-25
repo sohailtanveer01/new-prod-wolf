@@ -3,7 +3,7 @@
 require("../polyfill");
 
 import { useState, useEffect } from "react";
-
+import { fetchData } from "../page";
 import styles from "./home.module.scss";
 
 import BotIcon from "../icons/WWOLF.svg";
@@ -87,12 +87,18 @@ export function useSwitchTheme() {
 }
 
 function useHtmlLang() {
+  const [userData, setUserData] = useState<any>("");
+
   useEffect(() => {
     const lang = getISOLang();
     const htmlLang = document.documentElement.lang;
 
     if (lang !== htmlLang) {
       document.documentElement.lang = lang;
+    }
+    const result = fetchData();
+    if (result) {
+      setUserData(result);
     }
   }, []);
 }
@@ -150,7 +156,7 @@ function Screen() {
         </>
       ) : (
         <>
-          {/* <SideBar className={isHome ? styles["sidebar-show"] : ""} /> */}
+          <SideBar className={isHome ? styles["sidebar-show"] : ""} />
 
           <div className={styles["window-content"]} id={SlotID.AppBody}>
             <Routes>
@@ -179,7 +185,7 @@ export function useLoadData() {
   }, []);
 }
 
-export function Home() {
+export function Home(data: any) {
   useSwitchTheme();
   useLoadData();
   useHtmlLang();

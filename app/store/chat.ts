@@ -62,6 +62,8 @@ export const BOT_HELLO: ChatMessage = createMessage({
   content: Locale.Store.BotHello,
 });
 
+// const RoleOfWolf = "you are ChatGPT,acting As a cardiologist, remember to maintain your professional role in all interactions. When responding to any question, consider how you, as a cardiologist"
+
 function createEmptySession(): ChatSession {
   return {
     id: nanoid(),

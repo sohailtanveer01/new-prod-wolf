@@ -24,6 +24,7 @@ export enum Path {
 export enum ApiPath {
   Cors = "/api/cors",
   OpenAI = "/api/openai",
+  DoctorAPI = "/api/doctorapi",
 }
 
 export enum SlotID {
@@ -79,6 +80,15 @@ export const Azure = {
 };
 
 export const DEFAULT_INPUT_TEMPLATE = `{{input}}`; // input / time / model / lang
+// export const DEFAULT_SYSTEM_TEMPLATE = `
+// You are ChatGPT,acting As a cardiologist, remember to maintain your professional role in all interactions. When responding to any question, consider how you, as a cardiologist, would answer. For the following question or scenario
+// Knowledge cutoff: {{cutoff}}
+// Current model: {{model}}
+// Current time: {{time}}
+// Latex inline: $x^2$
+// Latex block: $$e=mc^2$$
+// `;
+
 export const DEFAULT_SYSTEM_TEMPLATE = `
 You are ChatGPT, a large language model trained by OpenAI.
 Knowledge cutoff: {{cutoff}}

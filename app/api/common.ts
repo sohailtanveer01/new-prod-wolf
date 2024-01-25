@@ -70,6 +70,7 @@ export async function requestOpenai(req: NextRequest) {
     duplex: "half",
     signal: controller.signal,
   };
+  console.log(req.body);
 
   // #1815 try to refuse gpt4 request
   if (serverConfig.customModels && req.body) {

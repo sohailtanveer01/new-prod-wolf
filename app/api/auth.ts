@@ -1,4 +1,4 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { getServerSideConfig } from "../config/server";
 import md5 from "spark-md5";
 import { ACCESS_CODE_PREFIX } from "../constant";
@@ -24,7 +24,15 @@ function parseApiKey(bearToken: string) {
   };
 }
 
+export function doctorapi(req: NextRequest, res: NextResponse) {
+  console.log(req.body);
+
+  return NextResponse.json({ message: "Hello doctorapi!" });
+}
+
 export function auth(req: NextRequest) {
+  console.log(req.body);
+
   const authToken = req.headers.get("Authorization") ?? "";
 
   // check if it is openai api key or user token
