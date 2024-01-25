@@ -8,12 +8,12 @@ import { getServerSideConfig } from "./config/server";
 
 const serverConfig = getServerSideConfig();
 
-export async function fetchData() {
-  const result = await axios.get("http://localhost:3000/api/doctorapi");
-  console.log("im at client inside ferchdata", result.data);
-  console.log("coming from postman");
-  return result;
-}
+// export async function fetchData() {
+//   const result = await axios.get("http://localhost:3000/api/doctorapi");
+//   console.log("im at client inside ferchdata", result.data);
+//   console.log("coming from postman");
+//   return result;
+// }
 
 // export async function fetchChatData(req:any) {
 //   if (req.method === 'POST') {
